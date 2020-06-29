@@ -1,0 +1,41 @@
+Mod free_JJ_mem
+
+free lua / luaJIT used memory by repeating in x minte collectgarbage()
+
+As it is also possible to jsut run a lua command with
+* /lua
+* //lua (when WorldEdit true)
+sure admin is not on all time, so mod will helpo in beginning with shorter breaks to find out where the used memory is most time, so later can be adjusted to longer braks.
+
+Idea from stop_lt_OOM
+but as it is very laggy, every second scan for mem bigger then x, this version safe cpu time and can maybe get more functions later.
+
+Until now, for start, every run print log time, memory used before, and after in KB
+
+you can choose
+* time that collecting is repeated
+* the destination for a report (log, terminal, player)
+* and set each of them on / off
+
+getting report what lua or luakit version is running
+* later may choose from this fact the maxluamem warning size
+
+How to set maxluamem ?
+* lua can max 2 GB, mean set 2048; luaJit can max 1 GB, mean set 1024 - for starting
+so you need to wait until you have a OOM crash, or you have further data as happened,
+but this OOM mem size belongs to lua or luajit - and when you changed your server between them, this values are wrong
+ok, so after you got an OM crash, take this shows mem and lower is by maybe 10% and set it as maxluamem size
+If that is true I have still to investigate, but as now I see about 35-50% memory reduce, so warning size should be low like this
+
+
+Thomas Wiegand (minetest.one)
+my first mod
+so shure a lot things missing
+
+as Licence, 
+but sure it is free, so easy code ... happy if it is helping
+(but I have no Idea what to write as ...)
+
+todo:
+* seam nessesary to send also cleanup message to player for first time using, and get some data to learn about own server and lua memory
+
